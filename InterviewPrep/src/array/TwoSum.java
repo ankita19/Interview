@@ -7,7 +7,10 @@ public class TwoSum {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+       
+		int[] arr = {1,2,3,4};
+		System.out.println(twoSum(10, arr));
+		
 	}
 
 	/**
@@ -23,7 +26,8 @@ public class TwoSum {
 	 *Complexity O(n2)
 	 * 
 	 */	
-public static int[] twoSum(int[] nums, int target) {      
+//1. Naive
+	public static int[] twoSum(int[] nums, int target) {      
         for(int i = 0 ; i < nums.length ; i++){
            for(int j = i+1 ; j < nums.length ; j++){
              if(nums[i] + nums[j] == target){
@@ -33,18 +37,51 @@ public static int[] twoSum(int[] nums, int target) {
         }
 		return new int[1];
 	}
+	// 2. Hash table
 public static int[] twoSumHash(int[] nums, int target) {      
 	Map<Integer,Integer> numMap = new HashMap();
 	for(int i = 0 ; i < nums.length ; i++){
       int complement = target - nums[i];
 
       if(numMap.containsKey(complement))
-    	  return new int[] {numMap.get(complement),i};
+    	  return new int[] {
+    			  numMap.get(complement),i};
     	  
       numMap.put(nums[i], i);
       }
     
 	throw new IllegalArgumentException("No value found");
+}
+
+//3. Sorting
+public static boolean twoSum(int target,int[] nums) {
+	int f=0,r= nums.length-1;
+	
+	while(f  < r) {
+		if(nums[f] + nums[r] - target == 0)
+			return true;
+		if(nums[f] + nums[r] - target > 0)
+			r--;
+		if(nums[f] + nums[r] - target  < 0)
+			f++;
+	}
+	return false;
+	
+}
+//4. three sum
+public static boolean threeSum(int target,int[] nums) {
+	int f=0,r= nums.length-1;
+	
+	while(f  < r) {
+		if(nums[f] + nums[r] - target == 0)
+			return true;
+		if(nums[f] + nums[r] - target > 0)
+			r--;
+		if(nums[f] + nums[r] - target  < 0)
+			f++;
+	}
+	return false;
+	
 }
 	
 }
