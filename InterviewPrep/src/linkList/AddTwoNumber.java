@@ -1,6 +1,16 @@
 package linkList;
 
  class AddTwoNumber {
+	 
+	 static class LinkNode{
+			int value;
+			LinkNode next;
+			
+			LinkNode(int val){
+				this.value = val;
+				this.next = null;
+			}
+		}
 
 	 LinkNode head;
 	 
@@ -177,15 +187,7 @@ AddTwoNumber l2 = new AddTwoNumber();
 	
 	
 	
-	static class LinkNode{
-		int value;
-		LinkNode next;
-		
-		LinkNode(int val){
-			this.value = val;
-			this.next = null;
-		}
-	}
+	
 	
 	
 	
