@@ -1,2 +1,6 @@
 complexity
-search : O(n) test3
+search : O(n)
+adding at either side : O(1)
+removing from start : O(1)
+As nodes in link list are scattered in memory so reading from ll is slower then reading from array.
+Uses: Stacks and queues only need fast operations on the ends, so linked lists are ideal.
