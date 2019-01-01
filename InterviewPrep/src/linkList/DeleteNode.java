@@ -3,7 +3,9 @@ package linkList;
 /*Delete a node from a singly-linked list,given only a variable pointing to that node.
  * In this approach last element can't be deleted
  * there could be a dangling pointer
- * O(1)
+ * Time and Space : O(1)
+ * Questions to ask : is it last node?
+ * 
  * */
 
 public class DeleteNode {
@@ -51,11 +53,11 @@ public class DeleteNode {
 		}
 		//to print
 		Node cur = a;
-		while(cur.next != null) {
+		while(cur != null) {
 			System.out.println(cur.val);
 			cur = cur.next;
 		}
-		System.out.println(cur.val);
+		
 	}
 	
 }

@@ -39,20 +39,16 @@ public class DetectCycle {
 	
 	static boolean contains_cycle(Node head) {
 		
-		if(head.next == null)
-			return false;
-		
-		if(head.next.next == head)
-			return true;		
-		Node fR = head;
-		Node sR = head;
-		while(fR != null && fR.next != null) {		
-			sR = sR.next;	
-			fR= fR.next.next;
-			if(sR==fR) return true;
-		}
-		
-		return false;
+		 Node slow = head;
+	     Node fast = head;
+	        
+	        while( fast != null && fast.next!= null && fast.next.next != null){
+	            slow = slow.next;
+	            fast = fast.next.next;
+	            if(slow == fast) 
+	                return true;
+	}
+	        return false;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
