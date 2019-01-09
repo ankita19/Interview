@@ -1,9 +1,11 @@
 package linkList;
 
 /*
- * 1) for in place solution
+ * 1) Iterative : for in place solution
  *time :  O(n)
  *Space : O(1)
+ *2) recursive in place
+ *
  *2) Additional memory (keep given link list unchanged)
  * */
 
@@ -22,37 +24,66 @@ public class ReverseLL {
 		Node curr = head;
 		Node nextNode = null;
 		
-		while (curr != null) {
+		while (curr.next != null) {
 			nextNode = curr.next;
 			curr.next = prev;
 			prev = curr;
 			curr = nextNode;
 		}
-		
-		return prev;
+		//to take care of last node
+		curr.next = prev;
+		return curr;
 	}
 	
-//	public static Node reverseOutplace(Node head) {
-
+//recursive solution
+	public static Node reverseRecursive(Node head) {
+		
+		if(head == null || head.next == null)
+			return head;
+		
+		Node curr =  head;
+		Node rest = reverseRecursive(curr.next);
+		curr.next.next = curr;
+		curr.next = null;
+		
+		return rest;
+	}
+	
+/*out place solution
+	public static Node reverseNew(Node head) {
+		
+		Node curr = head;
+		while(curr != null) {
+			Node newNode = new Node(curr.val);
+			curr = curr.next;
+			
+			
+		}
+		
+	}
+*/	
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		Node a = new Node(1);
 		Node b = new Node(2);
-		//Node c = new Node(3);
-		//Node d = new Node(4);
-		//Node e = new Node(5);
+		Node c = new Node(3);
+		Node d = new Node(4);
+		Node e = new Node(5);
 
 		a.next = b;
-/*		b.next = c;
+		b.next = c;
 		c.next = d;
-		d.next = e;
-*/
-		Node curr = reverseList(a);
-		while (curr != null) {
-			System.out.println(curr.val);
-			curr = curr.next;
+//		d.next = e;
+
+		//Node new_head = reverseList(a);
+		Node new_head = reverseRecursive(a);
+		while (new_head != null) {
+			System.out.println(new_head.val);
+			new_head = new_head.next;
 		}
 
 	}// end of method

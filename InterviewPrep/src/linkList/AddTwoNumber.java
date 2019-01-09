@@ -21,25 +21,19 @@ package linkList;
 				System.out.println(current.value);
 				current = current.next;
 			}
-			
 		}
 	 
 	 public void insertInto(int num , int after) {
 		 
 		 LinkNode newNode = new LinkNode(num);
-		 LinkNode current = head;
-		 
+		 LinkNode current = head; 
 		 while(current.value != after) {
 			 current = current.next;
-			 
 		 }
-		 
 		 LinkNode tmpNode = current.next;
 		 current.next = newNode;
 		 newNode.next = tmpNode;
 	 }
-	
-	
 	
 	 public static LinkNode addTwoNumbers(LinkNode l1, LinkNode l2) {
 		    LinkNode dummyHead = new LinkNode(0);
@@ -121,7 +115,6 @@ Explanation: 342 + 465 = 807.
 	    	  carrige = sum/10;
 	    	  }
 			 
-			 
 		    	if(l3.head== null)
 		    	{
 		    		l3.head = new LinkNode(valueToAdd);
@@ -134,10 +127,7 @@ Explanation: 342 + 465 = 807.
 		    		c3Current = c3Current.next;
 		    		
 		    	}
-		    	 
-			 
-			 
-		 }
+		   }
 		 
 		 
 		 if(carrige > 0)
