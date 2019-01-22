@@ -90,7 +90,8 @@ public class Practice {
 		map.put("A", 1);
 		map.put("B", 2);
 		
-		map.forEach((x,y) -> {if(x=="A") System.out.println("hello");
+		map.forEach((x,y) -> {
+			if(x=="A") System.out.println("hello");
 		else
 			System.out.println("hi");
 		});
