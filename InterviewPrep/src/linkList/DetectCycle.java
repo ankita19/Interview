@@ -42,7 +42,7 @@ public class DetectCycle {
 		 Node slow = head;
 	     Node fast = head;
 	        
-	        while( fast != null && fast.next!= null && fast.next.next != null){
+	        while(fast.next!= null && fast.next.next != null){
 	            slow = slow.next;
 	            fast = fast.next.next;
 	            if(slow == fast) 
@@ -62,7 +62,7 @@ public class DetectCycle {
 		a.next = b;
 		b.next = c;
 		c.next = d;
-		d.next = null;
+		d.next = c;
 		
 		System.out.println(contains_cycle(a));
 	

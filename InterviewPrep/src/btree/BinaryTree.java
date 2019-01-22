@@ -18,26 +18,33 @@ public class BinaryTree {
 	
 	 Node root;
 	
-	private BinaryTree() {
+	BinaryTree() {
 		root = null;
 	}
 	
+	public static void buildTree(BinaryTree tree) {
+		tree.root= new Node(5);
+		tree.root.left = new Node(4);
+		tree.root.right = new Node(6);
+		tree.root.left.left = new Node(3);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
     
 	BinaryTree tree = new BinaryTree();
-	tree.root= new Node(1);
-	tree.root.left = new Node(2);
-	tree.root.right = new Node(3);
+	buildTree(tree);
+	
 	
 	//DFSRecursive_In_Order(root);
-	//tree.DFS_non_Recursive_In_Order();	
-	tree.In_Order_Morrise();
+	tree.DFS_non_Recursive_In_Order();	
+	//tree.In_Order_Morrise();
 	
 	}
 	
 //traversal
-	//DFS
+	
+	
+//DFS
 	
 public void DFSRecursive_In_Order(Node root) {
 	Node node = root;
@@ -63,7 +70,7 @@ public void DFS_non_Recursive_In_Order() {
 			curr = s.pop();
 			System.out.println(curr.data);
 			curr = curr.right;
-			}
+		}
 }
 	
 //In constant space
@@ -101,4 +108,7 @@ public void In_Order_Morrise(){
 
 
 }
+
+
+
 }

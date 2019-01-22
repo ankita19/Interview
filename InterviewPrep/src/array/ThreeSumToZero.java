@@ -7,7 +7,9 @@ public class ThreeSumToZero {
 		
 		int[] num = {1,2,-3,6,8,-8};
 		
-		sumToZero(num);
+		//sumToZero(num);
+		
+		sumToZeroSorting(new int[]{-1,-7,0,1,3,4});
 		
 
 	}
@@ -30,5 +32,22 @@ public class ThreeSumToZero {
 		
 	}
 	
-	
+	public static void sumToZeroSorting(int[] num) {
+		
+	for(int i = 0;i < num.length;i++) {
+		int r = num.length -1;
+		int s = i+1;
+		
+			while(s<r) {
+				if(num[i]+num[s]+num[r] == 0) {
+					System.out.println(num[i]+ " , "+num[s]+" , "+num[r]);
+					r--;
+					s++;
+				}else  if(num[i]+num[s]+num[r] < 0)
+					s++;
+				else
+					r--;
+			}
+		} 
+	}
 }

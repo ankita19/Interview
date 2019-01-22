@@ -1,11 +1,6 @@
 package array;
 
 public class ReverseAnInt {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	/**Given a 32-bit signed integer, reverse digits of an integer.
 
@@ -32,5 +27,23 @@ public class ReverseAnInt {
 	    }
 	    return y;
 	}
+	
+	public static int reverser2(int x) {		
+		int y =0;
+		while(x != 0) {	
+			int tail = x%10;
+			int tmpResult = y*10 + tail;
+			//to check for overflow and underflow
+			if((tmpResult - tail )/10 != y) return 0;
+			 y = tmpResult;
+			x = x/10;
+		}
+		return y;
+	}
 
+	public static void main(String args[]) {
+		
+		System.out.println(reverser2(2147483641));
+
+	}
 }

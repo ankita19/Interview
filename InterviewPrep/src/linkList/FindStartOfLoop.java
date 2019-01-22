@@ -2,7 +2,7 @@ package linkList;
 
 import linkList.DetectCycle.Node;
 
-/*
+/*		
  * find start of loop in singly link list
  * 
  *why moving slow pointer to start works : 
@@ -27,38 +27,36 @@ public class FindStartOfLoop {
 		Node next;
 		
 		public Node(int val) {
-			val = val;
+			this.val = val;
 			next = null;
 		}
 	}
 
-	public static Node detect_cycle(Node head) {
-
-		if(head == null) return null;
-		
+	public static Node detect_start_cycle(Node head) {
+	
+		if(head == null) return null;		
 		Node slow = head;
 		Node fast =  head;
-		
-		if(fast.next != null && fast.next.next != null) {
+
+		while(fast !=null && fast.next != null && fast.next.next != null) {
 			
 			slow = slow.next;
-			fast = fast.next.next;
-			
+			fast = fast.next.next;			
 			if(slow == fast) {
-				
+			
 				slow = head;
-				
 				while(slow != fast) {
 					slow = slow.next;
 					fast = fast.next;
 				}
+				return fast;
 			}
-			return null;
 		}
 		
 		return null;
 		
 	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -66,14 +64,15 @@ public class FindStartOfLoop {
 		Node b = new Node(2);
 		Node c = new Node(3);
 		Node d = new Node(4);
-		//Node e = new Node(5);
+		Node e = new Node(5);
 		
 		a.next = b;
 		b.next = c;
 		c.next = d;
-		d.next = null;
+		d.next = e;
+		e.next = c;
 		
-		System.out.println(detect_cycle(a));
+		System.out.println(detect_start_cycle(a).val);
 
 	}
 

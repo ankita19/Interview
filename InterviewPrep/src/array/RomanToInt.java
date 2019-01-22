@@ -5,12 +5,6 @@ import java.util.Map;
 
 public class RomanToInt {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
-
 /**
  * Given a roman numeral, convert it to an integer.
 Input is guaranteed to be within the range from 1 to 3999.
@@ -29,21 +23,26 @@ public static int romanToInt(String s) {
     valueMap.put('M', 1000);
     
     
-    int index = 0;
+
     int result =0,nextVal = 0;
     
-    while(index < s.length()) {
-    	result = valueMap.get(s.charAt(index));
-    	nextVal = valueMap.get(s.charAt(index+1));
-    	if( result <  nextVal){
-    		result = result - nextVal;
-    		}
+    for(int index = 0; index < s.length()-1;index++) {
+    	
+    	if( valueMap.get(s.charAt(index)) < valueMap.get(s.charAt(index+1)))
+    		result -= valueMap.get(s.charAt(index));
     	else
-    		result =  result+nextVal;
-    	index += 2;
+    		result +=  valueMap.get(s.charAt(index));
+    	
     }
-		    
+		 
+    result += valueMap.get(s.charAt(s.length() -1));
 	return result;
 }
 
+
+
+public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	System.out.println(romanToInt("VII"));
+}
 }

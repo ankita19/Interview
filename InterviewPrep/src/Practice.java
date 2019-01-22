@@ -1,4 +1,5 @@
-
+import java.util.HashMap;
+import java.util.Map;
 
 public class Practice {
 
@@ -83,6 +84,16 @@ public class Practice {
 	}
 	
 	public static void main(String[] args) {
+		
+		Map<String,Integer> map = new HashMap<String,Integer>();
+		
+		map.put("A", 1);
+		map.put("B", 2);
+		
+		map.forEach((x,y) -> {if(x=="A") System.out.println("hello");
+		else
+			System.out.println("hi");
+		});
 		
 		Node a = new Node(1);
 		Node b = new Node(2);

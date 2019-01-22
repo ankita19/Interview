@@ -2,6 +2,11 @@ package string;
 import java.util.HashSet;
 import java.util.Set;
 
+/*1) count occurrence
+ *2) Only 1 char have odd count rest should have even count
+ * 
+ * */
+
 public class PermutationIsPalindrom {
 	
 	

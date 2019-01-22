@@ -4,7 +4,7 @@ public class ReverseWords {
 	
 	public static void main(String args[]) {
 		
-		char[] array = {' ','t','h','e',' ',' ','b','o','o','k',' ','p','l','a','y'};
+		char[] array = {'t','h','e',' ',' ','b','o','o','k',' ','p','l','a','y'};
 		
 		int start = 0;
 		int end = array.length -1;
@@ -13,15 +13,15 @@ public class ReverseWords {
 		System.out.println(array);
 		
 		for(int i = 0 ; i < array.length; i++) {
-			
+		
 		if(array[i] == ' ') {
 		array = reverse_char(array , start , i-1);
 		start = i+1;
 			}
-		if(i == array.length -1) {
+	if(i == array.length -1) {
 			array = reverse_char(array , start , i);
 			start = i+1;
-				}
+				} 
 		}
 		
 		System.out.println(array);
