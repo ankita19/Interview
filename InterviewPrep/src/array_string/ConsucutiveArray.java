@@ -1,4 +1,4 @@
-package array;
+package array_string;
 
 /*Check if array elements are consecutive
  * Method 1) 

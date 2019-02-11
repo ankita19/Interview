@@ -1,4 +1,4 @@
-package array;
+package array_string;
 
 public class IntIsPalind {
 

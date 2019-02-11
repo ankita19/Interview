@@ -1,4 +1,4 @@
-package array;
+package array_string;
 
 
 /*define length inside of main loop or re-initialize

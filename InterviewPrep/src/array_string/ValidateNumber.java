@@ -1,4 +1,4 @@
-package string;
+package array_string;
 
 public class ValidateNumber {
 

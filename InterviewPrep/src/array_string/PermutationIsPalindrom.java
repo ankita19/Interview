@@ -1,4 +1,4 @@
-package string;
+package array_string;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +25,7 @@ public class PermutationIsPalindrom {
 	}
 
 	public static void main(String[] args) {
-		System.out.println(hasPalindromPermutation("ana"));
+		System.out.println(hasPalindromPermutation("annaaa"));
 	}
 
 }
