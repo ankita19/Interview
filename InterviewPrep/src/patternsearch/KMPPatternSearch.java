@@ -72,10 +72,7 @@ public static boolean patternSerchingKMP(String txt , String patt , int[] lsp) {
 		
 		
 	}
-	
-
-	
-	return false;
+return false;
 	
 	
 }	

@@ -7,13 +7,9 @@ public class LSubStringNonRepeating {
 	
 	public static void main(String args[]) {
 		
-		System.out.println(LSubString("aankita"));
-		
+		System.out.println(lengthOfLongestSubstring("abcabcbb"));
 		
 	}
-	
-	
-	
 	
 	static int LSubString(String str){
 		
@@ -41,8 +37,25 @@ public class LSubStringNonRepeating {
 		
 		return (maxLen > currLen) ? maxLen : currLen;
 		
-		
-		
 	}
+
+	public static int lengthOfLongestSubstring(String s) {
+        char[] arr = s.toCharArray();
+        int n = arr.length;
+        int i =0,j=0;
+        int ans =0 ;
+        Set<Character> set = new HashSet<>();
+        while(i < n && j < n){
+            if(!set.contains(arr[j])){
+                set.add(arr[j++]);
+                ans = Math.max(ans,j-i);
+            }else{
+                set.remove(arr[i++]);
+            }
+   }
+        
+        return ans;
+        
+    }
 
 }
