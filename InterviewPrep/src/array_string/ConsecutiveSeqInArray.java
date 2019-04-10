@@ -2,8 +2,13 @@ package array_string;
 
 
 /*define length inside of main loop or re-initialize
- *  Method 1) sort nlogn
- *        2) check for next item
+ *  1) Brute force 
+ *  Time : O(n3)
+ *  Space : O(1)
+ *  
+ *  2) using sorting
+ *   1) sort nlogn
+ *   2) check for next item
  *        	    if(a[i] == a[i-1]+1) length ++
  *              
  *              max = Math.max..
@@ -11,7 +16,7 @@ package array_string;
  *      S = in place sort = O(1)
  *          O(n)
  *      
- * Method 2)
+ *  3) use hashmap
  * add all elements in hash map
  * find element and check for element -1
  * 	if found continue
@@ -26,23 +31,22 @@ import java.util.HashSet;
 import java.util.Set;
 public class ConsecutiveSeqInArray {
 	
-	public static int findSeq(int[] arr){
-		
+	public static int findSeq(int[] arr) {
 		int max = 0;
 		Set<Integer> number = new HashSet<Integer>();
-		for(int i=0;i<arr.length;i++) {
+		for (int i = 0; i < arr.length; i++) {
 			number.add(arr[i]);
-			}
-		
-		for(int i: number) {	
-			if(number.contains(i-1)) continue;
-			int length =0;
-				while(number.contains(i++)) 
-					length++;
-				
+		}
+
+		for (int i : number) {
+			if (number.contains(i - 1))
+				continue;
+			int length = 0;
+			while (number.contains(i++))
+				length++;
 			max = Math.max(max, length);
 		}
-	return max;
+		return max;
 	}
 
 	public static void main(String[] args) {

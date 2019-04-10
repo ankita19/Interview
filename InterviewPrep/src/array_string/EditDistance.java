@@ -3,8 +3,42 @@ package array_string;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+ * Given two strings s and t, determine if they are both one edit distance apart.
+
+Note: 
+
+There are 3 possiblities to satisify one edit distance apart:
+
+Insert a character into s to get t
+Delete a character from s to get t
+Replace a character of s to get t
+Example 1:
+
+Input: s = "ab", t = "acb"
+Output: true
+Explanation: We can insert 'c' into s to get t.
+Example 2:
+
+Input: s = "cab", t = "ad"
+Output: false
+Explanation: We cannot get t from s by only one step.
+
+======================
+Approaches
+
+
+
+ * */
+
+
+/**
+ * @author anshuljain
+ *
+ */
 public class EditDistance {
 
+	//in brute force  use hashmap and 
 	public static boolean bruteForce(String str1 ,String str2) {
 		
 	if(findDistance(str1,str2) == 2 || findDistance(str1,str2) == 1) 
@@ -79,13 +113,59 @@ public class EditDistance {
 		return true;
 	}
 
+	
+	public static boolean oneEditAway(String s1 , String s2) {
+
+		if(Math.abs(s1.length() - s2.length() ) > 1) return false;
+		
+		
+		String first = s1.length() < s2.length() ? s1 : s2;
+		String second = s1.length() > s2.length() ? s2 : s1;
+		
+		return calculateDistance(first,second);
+	}
+	//a
+	//an
+	
+	//amd
+	//ann
+	public static boolean calculateDistance(String first , String second) {
+		int index1 =0, index2 =0;
+		boolean foundDiff = false;
+		while(index1 < first.length() && index2 < second.length()) {
+			
+			if(first.charAt(index1) != second.charAt(index2)) {
+				
+				if(foundDiff) return false;
+				foundDiff = true;
+				
+				if(first.length() == second.length()) {
+					index1++;
+				}
+				
+			}else {
+				index1++;
+			
+			}
+			
+			index2++;
+			
+		}
+		
+		return true;
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+/*
 		System.out.println(OneAwayLength("rtp", "stp"));
 		System.out.println(OneAwayLength("rtp", "rs"));
-		System.out.println(OneAwayLength("rt", "rtp"));
+		System.out.println(OneAwayLength("rt", "rtp"));*/
+		
+		System.out.println(oneEditAway("rtp", "stp"));
+		System.out.println(oneEditAway("rp", "rpto"));
+		System.out.println(oneEditAway("rt", "rtp"));
 		
 	}
 

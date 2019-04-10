@@ -51,7 +51,8 @@ public class StringCompression {
 			
 		}
 		
-		System.out.println(Arrays.toString(str) + write);
+		
+		System.out.println(Arrays.toString(str) + write + " "+str.toString());
 		return write;
 	}
 

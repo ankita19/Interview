@@ -1,6 +1,35 @@
 package array_string;
 
 public class FindUniqueInArray {
+	
+	/*
+	Problem
+	==============
+
+	Only one char/int is unique	
+
+	=============
+	Example
+	============
+
+
+	==============
+	Solution
+	============
+	Brute force
+	Time Complexity : 
+	Space complexity :
+	===============
+	========
+	Better
+	Time Complexity : 
+	Space complexity :
+	=================
+	=====
+	Optimal
+	Time Complexity : 
+	Space complexity :
+	*/
 
 	public static char unique_str(String str) {
 		int carry = 0;
@@ -9,7 +38,7 @@ public class FindUniqueInArray {
 			
 			carry ^=c;
 		}
-		
+		System.out.println(carry);
 		return (char)carry;
 	}
 	
@@ -22,13 +51,13 @@ public class FindUniqueInArray {
 			carry2 |= (1 << num[i]);
 			System.out.println(carry + " "+ carry2);
 		}
-		return carry;
+		return carry2;
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(unique_str("qqqqq"));
+		System.out.println(unique_str("qqqqppp"));
 		System.out.println(unique_int(new int[]{1,2,2,3,3,8,8,1,3}));
 	}
 

@@ -2,6 +2,12 @@ package javaPractice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -31,11 +37,10 @@ public class ArrayListTest {
 	    someDog.setName("Rowlf"); // CCC
 	    
 	    System.out.println(someDog.getName());
+	 
 	}
 	
-	
-	
-	
+
 	public static void remove_dups(ArrayList<String> list,int n) {		
 		Set<String> unqList = new TreeSet<String>(list);
 		list.clear();
@@ -47,7 +52,29 @@ public class ArrayListTest {
 		
 		str[0] = "test";
 	}
-	
+	 public void practice() {
+		 
+		 List<String> list = new ArrayList<>();
+		 ArrayList<String> list2 = new ArrayList<>();
+		 
+		 list2.sort(new Comparator<String>(
+				 ) {
+
+					@Override
+					public int compare(String o1, String o2) {
+						// TODO Auto-generated method stub
+						return o1.length() - o1.length();
+					}
+		});
+		 
+		 //add in list
+		 list.add("test");
+		 list2.add("test");
+		 
+		 
+		 
+		 
+	 }
 	public static void main(String[] args) {
 		
 		ArrayListTest test = new ArrayListTest();
@@ -85,6 +112,7 @@ public class ArrayListTest {
     
      list2.add("three"); 
      
+     /*
      for(String string : list2) {
     	 System.out.println("list 2-"+string);
      }
@@ -92,6 +120,34 @@ public class ArrayListTest {
      for(String string : list) {
     	 System.out.println("list 1-"+string);
      }
-	}
+	}*/
+     
+ 
+     
+     list.add("test");
+     list2.addAll(0, list);
+     
+     list2.sort(new Comparator<String>(
+ 			 ) {
 
+ 				@Override
+ 				public int compare(String o1, String o2) {
+ 					// TODO Auto-generated method stub
+ 					return o2.length() - o1.length();
+ 				}
+ 	});
+     
+  
+     
+     for(String string : list2) {
+    	 System.out.println("list 2-"+string);
+     }
+     
+     
+     Set<String> set = new HashSet<>();
+     Map<String , String> map= new HashMap<>();
+     
+     set.addAll(list2);
+     
+	}
 }
