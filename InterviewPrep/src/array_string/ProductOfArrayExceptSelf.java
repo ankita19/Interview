@@ -1,8 +1,56 @@
 package array_string;
 
 import java.util.Arrays;
+/*
+Problem
+==============
+
+
+
+=============
+Example
+============
+
+
+==============
+Solution
+============
+Brute force : Two pass where a[i]!=a[j]
+Complexity : O(n2)/O(1)
+===============
+========
+1. User two array Left and Right. Maintain product in both direction and then populate final output array
+Complexity :O(n)/O(n) 
+=================
+=====
+2. User one array to track multiplication
+Complexity :O(n)/O(n) 
+*/
 
 public class ProductOfArrayExceptSelf {
+	
+	public static int[] productOfArray(int[] nums) {
+		if(nums == null || nums.length == 0) return new int[0];
+		
+		int left = 1,right =1;
+		
+		int[] prodArray =  new int[nums.length];
+	
+		for(int i = 0; i< nums.length;i++) {
+			prodArray[i] = left;
+			if(i!=0)
+				left =  Math.toIntExact(left*nums[i-1]);
+		}
+		
+		for(int j = nums.length-1;j >=0 ; j--) {
+			prodArray[j] = prodArray[j]*right;
+			right = (int) (right*nums[j]*1l);
+		}
+		
+		return prodArray;
+	}
+	
+	
 	/*Time Complexity: O(n)
 	 *Space Complexity: O(n)
 	 *Auxiliary Space: O(1)
@@ -52,7 +100,7 @@ public class ProductOfArrayExceptSelf {
 	
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-System.out.println(Arrays.toString(productWithSpace(new int[]{1,2,3,4})));
+System.out.println(Arrays.toString(productOfArray(new int[]{1,2,3,4})));
 	}
 
 }

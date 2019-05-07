@@ -18,6 +18,16 @@ a. How would you detect the first node in the cycle?
 b. Would the program always work if the fast runner moves three steps every time the slow runner moves one step?
 c. What if instead of a simple linked list, you had a structure where each node could have several "next" nodes? 
 This data structure is called a "directed graph." How would you test if your directed graph had a cycle?
+            
+          __B____
+ A       /      \
+---------        x meeting point
+         \      /
+           --C- 
+
+2(A+B) = A+2B+C
+2(slow) = fast
+A = C
  
  Why this algorithm works
  https://stackoverflow.com/questions/2936213/explain-how-finding-cycle-start-node-in-cycle-linked-list-work 

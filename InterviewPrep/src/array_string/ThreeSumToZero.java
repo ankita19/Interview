@@ -19,6 +19,7 @@ public class ThreeSumToZero {
 	}
 
 	//pass all test case    
+	//if list have duplicats then skip the next element
 	public List<List<Integer>> threeSum2(int[] num) {
         
 	      Arrays.sort(num);
