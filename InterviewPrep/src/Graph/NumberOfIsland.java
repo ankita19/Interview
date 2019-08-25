@@ -2,7 +2,7 @@ package Graph;
 
 public class NumberOfIsland {
 	
-	public int findNumberOfIsland() {
+	public void findNumberOfIsland() {
 		
 	}
 
