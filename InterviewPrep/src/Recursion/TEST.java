@@ -1,4 +1,4 @@
-package IK.recursion;
+package Recursion;
 
 public class TEST {
 

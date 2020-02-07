@@ -7,7 +7,7 @@ public class PreOrder {
 		if(root == null) return;
 		
 	    if(root != null) {
-	         System.out.println(root.data);
+	         System.out.println(root.val);
 	         preOrderTraversal(root.left);
 	         preOrderTraversal(root.right);
 	    }

@@ -1,4 +1,4 @@
-package IK.tree;
+package btree;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -6,9 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
-
-import btree.BinaryTree;
-import btree.BinaryTree2;
 
 public class BTreePractice {
 	

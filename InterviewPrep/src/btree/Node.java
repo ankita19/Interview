@@ -1,4 +1,4 @@
-package IK.tree;
+package btree;
 
 public class Node {
 

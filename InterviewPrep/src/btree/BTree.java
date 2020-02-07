@@ -1,8 +1,6 @@
-package IK.tree;
+package btree;
 
 import java.util.List;
-
-import btree.TreeNode;
 
 public class BTree {
 	

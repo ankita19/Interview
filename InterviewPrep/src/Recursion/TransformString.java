@@ -1,8 +1,8 @@
-package IK.recursion;
+package Recursion;
 
 public class TransformString {
 	
-	public String transformString(String str) {
+	public void transformString(String str) {
 		
 		
 	}

@@ -17,9 +17,9 @@ public class VerifyBtree {
 	public static boolean isBtree(Node root ,Integer min , Integer max) {
 		if(root == null) return true;
 		
-		if(min != null && root.data < min) return false; 
-		if(max != null && root.data > max) return false;
-		return isBtree(root.left , min , root.data) && isBtree(root.right , root.data,max ); 
+		if(min != null && root.val < min) return false; 
+		if(max != null && root.val > max) return false;
+		return isBtree(root.left , min , root.val) && isBtree(root.right , root.val,max ); 
 	}
 	
 	
@@ -35,9 +35,9 @@ public class VerifyBtree {
 	            curr = curr.left;
 	        }
 	        curr = stack.pop();
-	        if (inOrder != null && curr.data <= inOrder) return false;
+	        if (inOrder != null && curr.val <= inOrder) return false;
 
-	        inOrder = curr.data;
+	        inOrder = curr.val;
 	        curr = curr.right;
 	    }
 	    return true;

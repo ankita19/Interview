@@ -1,8 +1,8 @@
-package IK.tree;
+package btree;
 
 import java.util.ArrayList;
 
-import IK.tree.NArrayTree.NArrayNode;
+import btree.NArrayTree.NArrayNode;
 
 public class HeightofNarray {
 	

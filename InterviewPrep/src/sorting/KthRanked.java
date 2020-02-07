@@ -1,4 +1,4 @@
-package IK.sorting;
+package sorting;
 
 public class KthRanked {
 	

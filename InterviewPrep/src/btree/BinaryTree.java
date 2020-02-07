@@ -2,17 +2,6 @@ package btree;
 
 import java.util.Stack;
 
-class Node{
-	
-	int data;
-	Node left;
-	Node right;
-	
-	public Node(int item) {
-		data = item;
-		left = right = null;
-	}
-	}
 
 public class BinaryTree {
 	
@@ -51,7 +40,7 @@ public void DFSRecursive_In_Order(Node root) {
 	
 if(node == null) return;
 	DFSRecursive_In_Order(node.left);
-	System.out.println(node.data);
+	System.out.println(node.val);
 	DFSRecursive_In_Order(node.right);
 }	
 
@@ -68,7 +57,7 @@ public void DFS_non_Recursive_In_Order() {
 			curr = curr.left;
 		   } 
 			curr = s.pop();
-			System.out.println(curr.data);
+			System.out.println(curr.val);
 			curr = curr.right;
 		}
 }
@@ -84,7 +73,7 @@ public void In_Order_Morrise(){
 	while(curr != null){
 		
 	if(curr.left == null) {
-		System.out.println(curr.data);
+		System.out.println(curr.val);
 		curr = curr.right;
 	}
 	else {
@@ -99,7 +88,7 @@ public void In_Order_Morrise(){
 		}
 		else {
 			pred.right = null;
-			System.out.println(curr.data);
+			System.out.println(curr.val);
 			curr = curr.right;
 		}
 	}
